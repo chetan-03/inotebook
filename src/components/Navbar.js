@@ -19,14 +19,14 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} aria-current="page" to="/">Home</Link>
+                                <Link className={ `nav-link ${ location.pathname === '/' ? 'active' : '' }` } aria-current="page" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} to="/about">about</Link>
+                                <Link className={ `nav-link ${ location.pathname === '/about' ? 'active' : '' }` } to="/about">about</Link>
                             </li>
 
                         </ul>
-                        {!localStorage.getItem('token') ? <form className="d-flex">
+                        { !localStorage.getItem('token') ? <form className="d-flex">
                             <Link
                                 to='/login'
                                 role="button"
@@ -38,12 +38,12 @@ const Navbar = () => {
                         </form> : <div className="d-flex justify-content-evenly align-items-center">
                             <Link to='/myaccount'>
                                 <img
-                                    src={myaccountIcon}
+                                    src={ myaccountIcon }
                                     alt="MyAccount"
                                     className="bg-light mx-2 rounded-circle" />
                             </Link>
-                            <button className="btn btn-primary mx-2" onClick={hanldeLogout}>Logout</button>
-                        </div>}
+                            <button className="btn btn-primary mx-2" onClick={ hanldeLogout }>Logout</button>
+                        </div> }
                     </div>
                 </div>
             </nav>

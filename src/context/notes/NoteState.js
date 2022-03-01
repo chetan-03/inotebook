@@ -1,13 +1,13 @@
 import NoteContext from "./noteContext";
 import React, { useState } from 'react';
-import axios from "axios";
+// import axios from "axios";
 const NoteState = (props) => {
-    const host = "http://localhost:8000";
+    const host = "https://quiet-harbor-83032.herokuapp.com//api/notes/fetchallnotes";
     const [notes, setNote] = useState([]);
     const [user, setUser] = useState([]);
     const getNotes = async (token) => {
         try {
-            const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+            const response = await fetch(`${ host }/api/notes/fetchallnotes`, {
                 method: 'GET',
                 headers: {
                     "auth-token": token
@@ -23,7 +23,7 @@ const NoteState = (props) => {
     }
     const getUserDetails = async (token) => {
         try {
-            const response = await fetch(`${host}/api/auth/getuser`, {
+            const response = await fetch(`${ host }/api/auth/getuser`, {
                 method: 'POST',
                 headers: {
                     "auth-token": token
@@ -37,7 +37,7 @@ const NoteState = (props) => {
     }
     const addnote = async (title, description, tag, token) => {
         try {
-            const response = await fetch(`${host}/api/notes/addnote`, {
+            const response = await fetch(`${ host }/api/notes/addnote`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const NoteState = (props) => {
     }
     const deletenote = async (id, token) => {
         try {
-            await fetch(`${host}/api/notes/deletenote/${id}`, {
+            await fetch(`${ host }/api/notes/deletenote/${ id }`, {
                 method: 'DELETE',
                 headers: {
                     "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const NoteState = (props) => {
     }
     const editnote = async (id, title, description, tag, token) => {
         try {
-            await fetch(`${host}/api/notes/updatenote/${id}`, {
+            await fetch(`${ host }/api/notes/updatenote/${ id }`, {
                 method: 'PUT',
                 headers: {
                     "Content-Type": "application/json",
@@ -107,8 +107,8 @@ const NoteState = (props) => {
         props.showAlert("Note Updated Successfully !! ", "success")
     }
     return (
-        <NoteContext.Provider value={{ notes, addnote, deletenote, editnote, getNotes, getUserDetails, user }}>
-            {props.children}
+        <NoteContext.Provider value={ { notes, addnote, deletenote, editnote, getNotes, getUserDetails, user } }>
+            { props.children }
         </NoteContext.Provider>
     )
 }

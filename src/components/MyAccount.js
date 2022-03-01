@@ -15,25 +15,25 @@ const MyAccount = () => {
                     <div class="p-3 border bg-light">User Id</div>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light"> {_id} </div>
+                    <div class="p-3 border bg-light"> { _id } </div>
                 </div>
                 <div class="col-6">
                     <div class="p-3 border bg-light">User Name</div>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light">{name}</div>
+                    <div class="p-3 border bg-light">{ name }</div>
                 </div>
                 <div class="col-6">
                     <div class="p-3 border bg-light">Email</div>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light">{email}</div>
+                    <div class="p-3 border bg-light">{ email }</div>
                 </div>
                 <div class="col-6">
                     <div class="p-3 border bg-light">Date</div>
                 </div>
                 <div class="col-6">
-                    <div class="p-3 border bg-light">{date}</div>
+                    <div class="p-3 border bg-light">{ date }</div>
                 </div>
             </div>
         </div>

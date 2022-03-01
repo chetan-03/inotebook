@@ -34,7 +34,7 @@ const Notes = ({ showAlert }) => {
     return (
         <>
             <AddNote />
-            <button ref={ref} type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button ref={ ref } type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,7 +42,7 @@ const Notes = ({ showAlert }) => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" ref={refClose} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" ref={ refClose } className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <form className="my-3">
@@ -53,23 +53,23 @@ const Notes = ({ showAlert }) => {
                                         name="etitle"
                                         className="form-control"
                                         id="etitle"
-                                        onChange={onChange}
-                                        value={note.etitle}
+                                        onChange={ onChange }
+                                        value={ note.etitle }
                                     />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="edescription" className="form-label">Description</label>
-                                    <input type="text" name="edescription" value={note.edescription} className="form-control" id="edescription" onChange={onChange} />
+                                    <input type="text" name="edescription" value={ note.edescription } className="form-control" id="edescription" onChange={ onChange } />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="etag" className="form-label">Tag</label>
-                                    <input type="text" name="etag" value={note.etag} className="form-control" id="etag" onChange={onChange} />
+                                    <input type="text" name="etag" value={ note.etag } className="form-control" id="etag" onChange={ onChange } />
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button disabled={note.edescription.length < 5 || note.etitle.length < 5} type="button" className="btn btn-primary" onClick={handleClick}>Update changes</button>
+                            <button disabled={ note.edescription.length < 5 || note.etitle.length < 5 } type="button" className="btn btn-primary" onClick={ handleClick }>Update changes</button>
                         </div>
                     </div>
                 </div>
@@ -77,11 +77,11 @@ const Notes = ({ showAlert }) => {
             <div className="row my-3">
                 <h2>Your Notes</h2>
                 <div className="container mx-2">
-                    {notes.length === 0 && 'No Notes to display'}
+                    { notes.length === 0 && 'No Notes to display' }
                 </div>
-                {notes.map((note) => {
-                    return <NoteItem showAlert={showAlert} key={note._id} updateNote={updateNote} note={note} />
-                })}
+                { notes.map((note) => {
+                    return <NoteItem showAlert={ showAlert } key={ note._id } updateNote={ updateNote } note={ note } />
+                }) }
             </div>
         </>
     )
