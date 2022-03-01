@@ -2,7 +2,7 @@ import NoteContext from "./noteContext";
 import React, { useState } from 'react';
 // import axios from "axios";
 const NoteState = (props) => {
-    const host = "https://quiet-harbor-83032.herokuapp.com//api/notes/fetchallnotes";
+    const host = "https://quiet-harbor-83032.herokuapp.com/api/notes/fetchallnotes";
     const [notes, setNote] = useState([]);
     const [user, setUser] = useState([]);
     const getNotes = async (token) => {
